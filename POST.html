@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Uni.Circle | POST_RESOURCE</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+    :root { 
+        --bg-black: #000000; 
+        --accent-green: #00ff41; 
+        --premium-purple: #a855f7; 
+        --border: rgba(255, 255, 255, 0.1); 
+        --pixel-font: 'Press Start 2P', cursive; 
+        --mono-font: 'Space Mono', monospace; 
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+    body { background: var(--bg-black); color: white; font-family: var(--mono-font); overflow: hidden; }
+    
+    #custom-cursor { position: fixed; width: 20px; height: 20px; border: 1.5px solid white; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; }
+    #custom-cursor::after { content: ''; width: 3px; height: 3px; background: white; border-radius: 50%; }
+    #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+
+    .header-nav { max-width: 600px; margin: 30px auto 0; padding: 15px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; display: flex; justify-content: space-around; backdrop-filter: blur(10px); }
+    .nav-link { font-family: var(--pixel-font); font-size: 0.45rem; color: #666; text-decoration: none; transition: 0.3s; }
+    .nav-link:hover { color: var(--accent-green); }
+
+    .container { max-width: 500px; margin: 40px auto; padding: 35px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+    
+    h2 { font-family: var(--pixel-font); font-size: 0.65rem; color: var(--accent-green); margin-bottom: 25px; text-align: center; letter-spacing: 2px; }
+    
+    .input-label { font-family: var(--pixel-font); font-size: 0.35rem; color: #555; margin-bottom: 8px; display: block; }
+    
+    input, select, textarea { 
+        width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border); 
+        padding: 12px; color: white; margin-bottom: 18px; border-radius: 6px; 
+        font-family: var(--mono-font); outline: none; font-size: 0.8rem; 
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent-green); }
+    
+    .submit-btn { 
+        width: 100%; padding: 15px; background: transparent; 
+        border: 1px solid var(--accent-green); color: var(--accent-green); 
+        font-family: var(--pixel-font); font-size: 0.45rem; cursor: pointer; 
+        transition: 0.3s; letter-spacing: 1px; 
+    }
+    .submit-btn:hover { background: var(--accent-green); color: black; box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); }
+
+    footer { position: fixed; bottom: 20px; width: 100%; text-align: center; font-family: var(--pixel-font); font-size: 0.35rem; color: #333; }
+</style>
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+<canvas id="bg-canvas"></canvas>
+
+<nav class="header-nav">
+    <a href="HOME.html" class="nav-link">HOME</a>
+    <a href="IIHAND.html" class="nav-link">MARKETPLACE</a>
+    <a href="ABOUT.html" class="nav-link">ABOUT_US</a>
+</nav>
+
+<div class="container">
+    <h2>UPLOAD_RESOURCE</h2>
+    <form id="listingForm">
+        <span class="input-label">RESOURCE_NAME</span>
+        <input type="text" id="title" placeholder="e.g. DATA_STRUCTURES_VOL_1" required>
+        
+        <span class="input-label">NODE_CATEGORY</span>
+        <select id="category">
+            <option value="NOTES">NOTES</option>
+            <option value="ASSIGNMENTS">ASSIGNMENTS</option>
+            <option value="PPT">PPTs</option>
+            <option value="BOOKS">BOOKS</option>
+            <option value="GADGETS">GADGETS</option>
+            <option value="HOSTEL">HOSTEL_ESSENTIALS</option>
+        </select>
+        
+        <span class="input-label">PRICE_POINT (INR)</span>
+        <input type="number" id="price" placeholder="500" required>
+        
+        <span class="input-label">METADATA_DESCRIPTION</span>
+        <textarea id="description" placeholder="Enter resource details..." rows="3"></textarea>
+        
+        <button type="submit" class="submit-btn" id="uploadBtn">EXECUTE_DATA_STRIKE</button>
+    </form>
+</div>
+
+<footer>© 2024 UNI.CIRCLE // SECURE_UPLOADS_ONLY</footer>
+
+<script>
+// --- SUPABASE CONFIG ---
+const SB_URL = 'https://ydolglnquqkqiidiherk.supabase.co';
+const SB_KEY = 'sb_publishable_WZOniquhPihxqDj8H9ndVQ_Uj9hAVOr';
+const supabaseClient = supabase.createClient(SB_URL, SB_KEY);
+
+// --- FORM SUBMISSION ---
+document.getElementById('listingForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('uploadBtn');
+    btn.innerText = "UPLOADING...";
+
+    const { error } = await supabaseClient.from('listings').insert([{
+        title: document.getElementById('title').value,
+        category: document.getElementById('category').value,
+        price: parseFloat(document.getElementById('price').value),
+        description: document.getElementById('description').value
+    }]);
+
+    if (error) {
+        alert("UPLOAD_FAILED: " + error.message);
+        btn.innerText = "RETRY_STRIKE";
+    } else {
+        btn.innerText = "SUCCESSFUL";
+        setTimeout(() => window.location.href = 'IIHAND.html', 1000);
+    }
+};
+
+// --- CONSTELLATION BACKGROUND ---
+const bgCanvas = document.getElementById('bg-canvas');
+const bgCtx = bgCanvas.getContext('2d');
+bgCanvas.width = window.innerWidth; bgCanvas.height = window.innerHeight;
+let pts = [];
+for(let i=0; i<80; i++) pts.push({x:Math.random()*bgCanvas.width, y:Math.random()*bgCanvas.height, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3});
+
+function drawBg() {
+    bgCtx.fillStyle = '#000'; bgCtx.fillRect(0,0,bgCanvas.width,bgCanvas.height);
+    pts.forEach((p, i) => {
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0 || p.x>bgCanvas.width) p.vx*=-1; if(p.y<0 || p.y>bgCanvas.height) p.vy*=-1;
+        bgCtx.fillStyle = 'rgba(255,255,255,0.7)';
+        bgCtx.beginPath(); bgCtx.arc(p.x, p.y, 1.2, 0, Math.PI*2); bgCtx.fill();
+        for(let j=i+1; j<pts.length; j++) {
+            let d = Math.hypot(p.x-pts[j].x, p.y-pts[j].y);
+            if(d < 180) {
+                bgCtx.strokeStyle = `rgba(0, 255, 65, ${0.2 - d/900})`;
+                bgCtx.lineWidth = 0.6;
+                bgCtx.beginPath(); bgCtx.moveTo(p.x, p.y); bgCtx.lineTo(pts[j].x, pts[j].y); bgCtx.stroke();
+            }
+        }
+    });
+    requestAnimationFrame(drawBg);
+}
+
+// --- CURSOR ---
+document.addEventListener('mousemove', (e) => {
+    document.getElementById('custom-cursor').style.left = e.clientX + 'px';
+    document.getElementById('custom-cursor').style.top = e.clientY + 'px';
+});
+
+drawBg();
+</script>
+</body>
+</html>
