@@ -1,399 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="canonical" href="https://uni-circle.in/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<meta property="og:title" content="Uni-Circle | Student Hub">
-<meta property="og:description" content="Buy, Sell, and Save the student way at Uni-Circle.in">
-<meta property="og:url" content="https://uni-circle.in/">
-<meta property="og:type" content="website">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni.Circle | HOME</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
-<style>
-:root {
---bg-black: #000000;
---accent-green: #00ff41;
---premium-purple: #a855f7;
---glass: rgba(255, 255, 255, 0.03);
---border: rgba(255, 255, 255, 0.1);
---pixel-font: 'Press Start 2P', cursive;
---heading-font: 'Outfit', sans-serif;
---mono-font: 'Space Mono', monospace;
-}
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
 
-* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
-body { background: var(--bg-black); color: white; font-family: var(--mono-font); overflow-x: hidden; }
+        h1 {
+            font-size: 8rem;
+            font-weight: 900;
+            color: #ff6b6b;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
 
-/* Custom Cursor */
-#custom-cursor {
-position: fixed; width: 24px; height: 24px; border: 1.5px solid #ffffff;
-border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
-display: flex; align-items: center; justify-content: center;
-}
-#custom-cursor::after { content: ''; width: 3px; height: 3px; background: #ffffff; border-radius: 50%; }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
 
-#bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-.container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
 
-/* Top Boundary Header */
-.header-boundary {
-margin-top: 30px;
-padding: 20px 40px;
-background: rgba(255, 255, 255, 0.02);
-border: 1px solid var(--border);
-border-radius: 20px;
-backdrop-filter: blur(12px);
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: relative;
-z-index: 10;
-}
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.nav-left { display: flex; align-items: center; gap: 30px; }
-.brand-nav { font-family: var(--pixel-font); font-size: 0.65rem; color: #fff; text-decoration: none; letter-spacing: 2px; }
-.boxed-tadka {
-background: rgba(0, 255, 65, 0.05);
-border: 1px solid rgba(0, 255, 65, 0.2);
-padding: 10px 20px;
-border-radius: 10px;
-font-family: var(--pixel-font);
-font-size: 0.55rem;
-color: var(--accent-green);
-text-decoration: none;
-transition: 0.3s;
-}
-.boxed-tadka:hover { background: var(--accent-green); color: black; border-color: var(--accent-green); }
+        .btn:hover {
+            background-color: #555;
+        }
 
-.nav-link-text { font-family: var(--pixel-font); font-size: 0.5rem; text-decoration: none; color: #666; transition: 0.3s; }
-.nav-link-text:hover { color: white; }
+        /* Optional: Subtle animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
 
-/* Title Area */
-.title-hero { text-align: center; margin: 90px 0; perspective: 1000px; }
-.version-typewriter {
-font-family: var(--mono-font); font-size: 0.8rem; color: var(--accent-green);
-margin-bottom: 25px; display: inline-block; letter-spacing: 4px;
-border-right: 2px solid var(--accent-green); white-space: nowrap; overflow: hidden;
-animation: blink 0.7s infinite;
-}
-.pixel-title {
-font-family: var(--pixel-font); font-size: 3rem; letter-spacing: 22px;
-text-transform: uppercase; padding-left: 22px; margin-bottom: 20px;
-transition: transform 0.1s ease-out;
-}
-.tagline { color: #555; font-size: 0.75rem; letter-spacing: 12px; text-transform: uppercase; }
-
-/* Hero Split */
-.hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; margin-bottom: 100px; }
-.open-letter { background: var(--glass); border: 1px solid var(--border); padding: 45px; border-radius: 20px; backdrop-filter: blur(10px); }
-.letter-header { color: var(--accent-green); font-size: 0.6rem; margin-bottom: 25px; font-family: var(--pixel-font); }
-.letter-content { font-size: 0.9rem; color: #ccc; line-height: 2; border-left: 2px solid var(--accent-green); padding-left: 30px; }
-
-.visual-3d-container { width: 100%; height: 320px; position: relative; }
-#kinetic-canvas { width: 100%; height: 100%; }
-
-/* Counters */
-.counter-section { display: flex; justify-content: space-around; padding: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 100px; background: rgba(255,255,255,0.01); }
-.counter-num { display: block; font-family: var(--pixel-font); font-size: 1.8rem; color: white; margin-bottom: 12px; }
-.counter-label { font-size: 0.65rem; color: #555; text-transform: uppercase; letter-spacing: 3px; }
-
-/* Bento Grid */
-.grid-main { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px; }
-.grid-center { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; width: 50%; margin: 0 auto 120px auto; }
-.glass-card { background: rgba(255,255,255,0.01); border: 1px solid var(--border); border-radius: 18px; padding: 40px 25px; display: flex; flex-direction: column; align-items: center; transition: 0.4s; }
-.glass-card:hover { border-color: var(--accent-green); background: rgba(0, 255, 65, 0.03); transform: translateY(-5px); }
-
-/* Bento Buttons */
-.node-btn {
-margin-top: 25px;
-padding: 10px 20px;
-background: transparent;
-border: 1px solid var(--border);
-color: #fff;
-font-family: var(--pixel-font);
-font-size: 0.45rem;
-letter-spacing: 1px;
-border-radius: 4px;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-}
-.node-btn:hover {
-background: rgba(255, 255, 255, 0.1);
-border-color: #fff;
-color: var(--accent-green);
-box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-}
-.node-btn.purple-btn:hover {
-color: var(--premium-purple);
-box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
-}
-
-/* Status & Footer */
-.status-bar { text-align: center; padding: 25px; color: var(--accent-green); font-family: var(--mono-font); font-size: 0.75rem; letter-spacing: 4px; border-top: 1px solid var(--border); }
-.site-footer { padding: 80px 40px; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: center; }
-.footer-center { text-align: center; }
-.footer-sub-brand { margin-top: 15px; display: block; color: #444; font-family: var(--pixel-font); font-size: 0.5rem; text-decoration: none; }
-.foot-link { display: block; text-decoration: none; color: #666; font-size: 0.55rem; margin-bottom: 15px; font-family: var(--pixel-font); transition: 0.3s; }
-.foot-link:hover { color: white; }
-.footer-legal-group { display: flex; justify-content: flex-end; gap: 25px; }
-
-@keyframes blink { 50% { border-color: transparent; } }
-</style>
+        .illustration {
+            font-size: 5rem;
+            animation: float 4s ease-in-out infinite;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="custom-cursor"></div>
-<canvas id="bg-canvas"></canvas>
-
-<div class="container">
-<div class="header-boundary">
-<div class="nav-left">
-<a href="#" class="brand-nav">UNI.CIRCLE</a>
-<a href="TRAVEL.html" class="boxed-tadka">TRAVEL.TADKA</a>
-</div>
-<div style="display: flex; gap: 25px;">
-<a href="HOME.html" class="nav-link-text">HOME</a>
-<a href="ABOUT.html" class="nav-link-text">ABOUT</a>
-<a href="IIHAND.html" class="nav-link-text" style="color: var(--premium-purple);">MARKETPLACE</a>
-<a href="WAVEFORM.html" class="nav-link-text">WAVEFORM</a>
-</div>
-</div>
-
-<div class="title-hero">
-<span class="version-typewriter" id="typewriter"></span>
-<h1 class="pixel-title" id="parallax-title">UNI.CIRCLE</h1>
-<p class="tagline">BUY. SELL. SAVE - THE STUDENT WAY</p>
-</div>
-
-<div class="hero-split">
-<div class="open-letter">
-<p class="letter-header">// MISSION_STATEMENT</p>
-<div class="letter-content" style="text-align: justify; white-space: pre-line;">Dear Reader,
-
-This website didn’t start as a business idea or a grand startup plan.
-It started with a simple question:
-“Why is it so hard for students to find the right resources at the right time?”
-As students, we spend hours searching—notes, books, electronics, hostel essentials, guidance, opportunities—often scattered across different platforms, overpriced, or simply unreliable. Somewhere between classes, deadlines, and ambitions, we’re expected to figure everything out on our own.
-This platform is my small attempt to change that.
-I wanted to create a space by students, for students—a place that is simple, practical, and actually useful. No unnecessary noise. No false promises. Just things that help you move forward, whether you’re starting college, already in it, or figuring out what comes next.
-This website is still growing. It’s not perfect, but it’s a start.
-</div>
-</div>
-<div class="visual-3d-container">
-<canvas id="kinetic-canvas"></canvas>
-</div>
-</div>
-
-<div class="counter-section">
-<div style="text-align:center"><span class="counter-num" data-target="1400">0</span><span class="counter-label">WEBSITE_VISITS</span></div>
-<div style="text-align:center"><span class="counter-num" data-target="567">0</span><span class="counter-label">NOTES_DOWNLOADED</span></div>
-<div style="text-align:center"><span class="counter-num" data-target="400">0</span><span class="counter-label">AI_CONVERTED</span></div>
-</div>
-
-<div class="pixel-heading">
-EXPLORE // UNI.CIRCLE
-</div>
-
-<style>
-.pixel-heading{
-  text-align:center;
-  font-family:var(--pixel-font);
-  font-size:1.8rem;          /* smaller than main title */
-  letter-spacing:2px;
-  color:#ffffff;
-  margin-bottom:18px;
-  position:relative;
-}
-</style>
-<div style="height:20px;"></div>
-<div class="bento-grid">
-
-  <!-- VIDEOS -->
-  <div class="glass-card bento-box">
-    <div class="icon">
-      <i data-lucide="play-circle" size="26"></i>
+    <div class="container">
+        <span class="illustration">🚀</span>
+        <h1>404</h1>
+        <h2>Oops! You're lost in space.</h2>
+        <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="/" class="btn">Take Me Home</a>
     </div>
-    <h3>VIDEOS</h3>
-    <p>Conceptual VIDEOS</p>
-    <a href="VIDEOS.html" class="bento-btn">PLAY_BUFFER</a>
-  </div>
 
-  <!-- MARKETPLACE -->
-  <div class="glass-card bento-box marketplace">
-    <div class="icon purple">
-      <i data-lucide="brain-circuit" size="26"></i>
-    </div>
-    <h3>MARKETPLACE</h3>
-    <p>BUY & SELL Student Essentials</p>
-    <a href="IIHAND.html" class="bento-btn outline">INITIALIZE</a>
-  </div>
-
-</div>
-
-<style>
-.bento-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:50px;
-  max-width:520px;      /* 👈 enlarged boxes */
-  margin:0 auto;
-}
-
-.bento-box{
-  aspect-ratio:1/1;
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.bento-box h3{
-  margin-top:8px;
-  font-size:0.7rem;
-  font-family:var(--pixel-font);
-}
-
-.bento-box p{
-  font-size:0.6rem;
-  color:#666;
-  margin:10px 0 14px;
-}
-
-.bento-btn{
-  font-size:0.55rem;
-  padding:6px 10px;
-  border-radius:6px;
-  background:#111;
-  color:#fff;
-  text-decoration:none;
-}
-
-.marketplace{
-  border:1.5px solid var(--premium-purple);
-}
-
-.purple{ color:var(--premium-purple); }
-
-.outline{
-  background:transparent;
-  border:1px solid var(--premium-purple);
-  color:var(--premium-purple);
-}
-</style>
-<div style="height:85px;"></div>
-
-<div class="status-bar" id="status-text">NETWORK_IDLE...</div>
-
-<footer class="site-footer">
-<div class="foot-col">
-<a href="#" class="foot-link">LINKEDIN</a>
-<a href="#" class="foot-link">INSTAGRAM</a>
-</div>
-<div class="footer-center">
-<h2 style="font-family: var(--pixel-font); font-size: 1.5rem;">UNI.CIRCLE</h2>
-<a href="TRAVEL.html" class="footer-sub-brand">TRAVEL.TADKA</a>
-</div>
-<div class="footer-legal-group">
-<a href="#" class="foot-link">PRIVACY POLICY</a>
-<a href="#" class="foot-link">TERMS & CONDITIONS</a>
-</div>
-</footer>
-</div>
-
-<script>
-lucide.createIcons();
-// Status Cycling
-const statuses = ["SYSTEMS_OPERATIONAL","NODES_STABLE", "V_1.0.1_DEPLOYED", "CHECKING_UPDATES..."];
-let sIdx = 0; setInterval(() => { document.getElementById('status-text').innerText = statuses[sIdx]; sIdx = (sIdx + 1) % statuses.length; }, 3000);
-
-// Parallax Title
-const title = document.getElementById('parallax-title');
-document.addEventListener('mousemove', (e) => {
-document.getElementById('custom-cursor').style.left = e.clientX + 'px';
-document.getElementById('custom-cursor').style.top = e.clientY + 'px';
-const x = (window.innerWidth / 2 - e.clientX) / 30;
-const y = (window.innerHeight / 2 - e.clientY) / 30;
-title.style.transform = `rotateY(${x}deg) rotateX(${y}deg) translateZ(20px)`;
-});
-
-// Background
-const bgCanvas = document.getElementById('bg-canvas');
-const bgCtx = bgCanvas.getContext('2d');
-bgCanvas.width = window.innerWidth; bgCanvas.height = window.innerHeight;
-let pts = [];
-for(let i=0; i<90; i++) pts.push({x:Math.random()*bgCanvas.width, y:Math.random()*bgCanvas.height, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3});
-function drawBg() {
-bgCtx.fillStyle = '#000'; bgCtx.fillRect(0,0,bgCanvas.width,bgCanvas.height);
-pts.forEach((p, i) => {
-p.x += p.vx; p.y += p.vy;
-if(p.x<0 || p.x>bgCanvas.width) p.vx*=-1; if(p.y<0 || p.y>bgCanvas.height) p.vy*=-1;
-bgCtx.fillStyle = 'rgba(255,255,255,0.7)';
-bgCtx.beginPath(); bgCtx.arc(p.x, p.y, 1.3, 0, Math.PI*2); bgCtx.fill();
-for(let j=i+1; j<pts.length; j++) {
-let d = Math.hypot(p.x-pts[j].x, p.y-pts[j].y);
-if(d < 180) {
-bgCtx.strokeStyle = `rgba(255,255,255,${0.25 - d/700})`;
-bgCtx.lineWidth = 0.9;
-bgCtx.beginPath(); bgCtx.moveTo(p.x, p.y); bgCtx.lineTo(pts[j].x, pts[j].y); bgCtx.stroke();
-}
-}
-});
-requestAnimationFrame(drawBg);
-}
-drawBg();
-
-// Typewriter
-const txt = "VERSION_1.0.1_RELEASED";
-let char = 0, del = false;
-function type() {
-document.getElementById("typewriter").innerHTML = txt.substring(0, char);
-if (!del && char < txt.length) char++;
-else if (del && char > 0) char--;
-else del = !del;
-setTimeout(type, del ? 50 : 120);
-}
-type();
-
-// 3D Kinetic
-const kCanvas = document.getElementById('kinetic-canvas');
-const kCtx = kCanvas.getContext('2d');
-let kNodes = [];
-function init3D() {
-kCanvas.width = kCanvas.parentElement.clientWidth; kCanvas.height = 320;
-for(let i=0; i<15; i++) kNodes.push({x:Math.random()*kCanvas.width, y:Math.random()*kCanvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2});
-}
-function draw3D() {
-kCtx.clearRect(0, 0, kCanvas.width, kCanvas.height);
-kCtx.strokeStyle = 'rgba(0, 255, 65, 0.4)';
-kNodes.forEach((p, i) => {
-p.x += p.vx; p.y += p.vy;
-if(p.x<0 || p.x>kCanvas.width) p.vx*=-1; if(p.y<0 || p.y>kCanvas.height) p.vy*=-1;
-kNodes.forEach((p2) => {
-let d = Math.hypot(p.x-p2.x, p.y-p2.y);
-if(d < 140) { kCtx.beginPath(); kCtx.moveTo(p.x, p.y); kCtx.lineTo(p2.x, p2.y); kCtx.stroke(); }
-});
-});
-requestAnimationFrame(draw3D);
-}
-init3D(); draw3D();
-
-// Counters
-const counts = document.querySelectorAll('.counter-num');
-counts.forEach(c => {
-const upd = () => {
-const trgt = +c.getAttribute('data-target'), cur = +c.innerText, inc = trgt / 80;
-if(cur < trgt) { c.innerText = Math.ceil(cur + inc); setTimeout(upd, 25); }
-else c.innerText = trgt;
-};
-upd();
-});
-</script>
 </body>
 </html>
