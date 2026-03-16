@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bajpai's Spine & Ortho Pain Centre | ABOUT DOCTOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth; 
+            background-color: #ffffff;
+            color: #334155;
+            font-size: 15px; /* Smaller, decent professional font size */
+        }
+
+        /* Professional Justification & Spacing */
+        .text-justify-medical {
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 2.0;
+            letter-spacing: 0.01em;
+        }
+
+        .theme-purple { color: #702459; }
+        .bg-purple { background-color: #702459; }
+        
+        /* Hospital Tag Styling */
+        .hospital-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+            margin: 2px;
+            text-transform: uppercase;
+        }
+
+        footer { background-color: #1a1a1a; color: #d1d5db; }
+        .footer-heading { color: #ffffff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; }
+        
+        /* Remove all default italics from tags */
+        em, i, blockquote, cite { font-style: normal !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="LOGO.png" alt="Logo" class="h-10">
+            <div class="hidden lg:flex gap-8 font-bold text-[10px] tracking-widest text-slate-500 uppercase">
+                <a href="index.html" class="hover:text-[#702459]">HOME</a>
+                <a href="about.html" class="hover:text-[#702459]">ABOUT US</a>
+                <a href="service.html" class="hover:text-[#702459]">SERVICES</a>
+                <a href="blog.html" class="hover:text-[#702459]">BLOGS</a>
+                <a href="workshops.html" class="hover:text-[#702459]">WORKSHOPS</a>
+                <a href="gallery.html" class="hover:text-[#702459]">GALLERY</a>
+                <a href="contact.html" class="hover:text-[#702459]">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[300px] flex items-center justify-center bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-40">
+            <img src="banner01.jpg" class="w-full h-full object-cover" alt="Medical Team">
+        </div>
+        <div class="relative z-10 text-center px-8">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tighter uppercase">
+                ABOUT DOCTOR
+            </h1>
+            <div class="mt-6 inline-flex items-center bg-[#702459] text-white px-6 py-2 rounded-md text-[9px] font-bold uppercase tracking-widest">
+                <span>Home</span> <span class="mx-3 opacity-50">|</span> <span>About Doctor</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-16 items-start">
+            
+            <div class="lg:col-span-4 lg:sticky lg:top-32">
+                <div class="relative mb-8">
+                    <img src="DOCTOR.png" alt="Dr. Prashant Bajpai" class="rounded-2xl shadow-xl w-full object-cover">
+                    <div class="absolute -bottom-4 -right-4 bg-[#702459] text-white p-5 rounded-xl shadow-lg text-center min-w-[100px]">
+                        <p class="text-2xl font-black">30+</p>
+                        <p class="text-[8px] font-bold uppercase tracking-widest">Years Experience</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100">
+                    <h5 class="theme-purple font-black text-[10px] uppercase tracking-widest mb-6 border-b pb-2">Life Memberships</h5>
+                    <ul class="space-y-4 font-bold text-slate-600 text-[11px]">
+                        <li class="flex items-start"><i class="fas fa-check-circle theme-purple mr-3 mt-0.5"></i> Delhi Medical Association</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle theme-purple mr-3 mt-0.5"></i> Delhi Orthopaedic Association</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle theme-purple mr-3 mt-0.5"></i> Indian Society For Study Of Pain</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle theme-purple mr-3 mt-0.5"></i> Ozone Forum Of India</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8">
+                <div class="mb-10">
+                    <h2 class="text-3xl font-black text-slate-900 tracking-tighter uppercase mb-2">
+                        Dr. Prashant <span class="theme-purple">Bajpai</span>
+                    </h2>
+                    <p class="text-slate-400 font-bold text-[10px] uppercase tracking-[0.2em]">Senior Consultant Orthopedic Surgeon</p>
+                </div>
+
+                <div class="text-justify-medical space-y-6 text-slate-600">
+                    <p>
+                        At <strong>Spine & Ortho Pain Centre</strong>, we offer services that combine the latest medical advancements with clinically tested results. Our goal is to provide you with the best quality of life possible in the most personable way. The Centre is run by a dedicated team comprising a Senior Consultant Orthopedic Surgeon, an expert postgraduate physiotherapist, and well-trained technical staff.
+                    </p>
+
+                    <p>
+                        Dr. Prashant Bajpai, a leading Senior Consultant Orthopedic Surgeon with vast experience of working in the field of orthopedics for about 30 years, is the inspiration behind the edifice. He is a <strong>graduate</strong>from <strong>Maulana Azad Medical College, New Delhi (Batch 1976)</strong> and a <strong>Post Graduate in Orthopedics (M.S Orthopedics) (Batch 1983) </strong>from <strong>Safdarjang Hospital, New Delhi</strong>.
+                    </p>
+
+                    
+
+                    <p>
+                        He worked in different capacities in various big government and private hospitals in Delhi, including <strong>LNJP and associated GB Pant Hospital, Safdarjang Hospital, AIIMS, and Ram Manohar Lohia Hospital</strong>. His extensive career also includes service at Sarvodya Hospital, Jaipur Golden Hospital, MGS Hospital, Bhagwan Mahavir Hospital, and Santom Hospital as a Senior Orthopedic Surgeon.
+                    </p>
+
+                    <div class="flex flex-wrap py-2">
+                        <span class="hospital-tag">LNJP</span> 
+                        <span class="hospital-tag">GB PANT</span> 
+                        <span class="hospital-tag">SAFDARJANG HOSPITAL</span>
+                        <span class="hospital-tag">AIIMS</span> 
+                        <span class="hospital-tag">RML Hospital</span>
+                        <span class="hospital-tag">SARVODYA HOSPITAL</span> 
+                        <span class="hospital-tag">JAIPUR GOLDEN HOSPITAL</span>
+                        <span class="hospital-tag">MGS HOSPITAL</span>
+                        <span class="hospital-tag">BHAGWAN MAHAVIR HOSPITAL</span>
+                        <span class="hospital-tag">SANTOM HOSPITAL</span>
+                    </div>
+
+                    <p>
+                        He acquired training in Advance Pain Management procedures at Kolkata and Mumbai under the guidance of eminent pain specialists from India, Australia, UK, and the USA. He is also trained in Medical Ozone Therapy from the Ozone Forum of India, Mumbai. He is the only Orthopedician in North-West Delhi performing many advance Interventional Pain Management procedures and Medical Oxygen Ozone treatments for joints, spine, and various neurological or old-age related diseases.
+                    </p>
+
+                    <div class="border-l-4 border-purple pl-6 py-4 bg-slate-50 rounded-r-xl">
+                        <p class="font-bold text-slate-800 uppercase text-[11px] mb-1">Mission Statement</p>
+                        <p class="text-slate-600">
+                            He believes "Real Pain Relief Is A Basic Human Right", dedicating his mission to relieving pain in society with his level best effort.
+                        </p>
+                    </div>
+
+                    <p>
+                        Most patients are treated at our Centre; however, for procedures requiring spinal or general anesthesia, patients are admitted to nearby well-equipped modern hospitals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-16 pb-8 px-6 bg-[#1a1a1a] text-[#d1d5db]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm">
+        
+        <div>
+            <h5 class="text-white font-black uppercase tracking-widest text-[12px] mb-6">Patient Guide</h5>
+            <ul class="space-y-3 text-[11px] font-medium">
+                <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="service.html" class="hover:text-white transition-colors">Services</a></li>
+                <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
+                <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="text-center flex flex-col items-center">
+            <img src="LOGO.png" alt="Logo" class="h-10 mx-auto mb-6 brightness-0 invert">
+            
+            <p class="text-[10px] leading-relaxed opacity-70 mb-8 text-justify" style="text-justify: inter-word;">
+                Disclaimer: The material presented in this website is intended for informational and/or educational purpose only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+            </p>
+
+            <div class="flex justify-center gap-6 text-white text-lg">
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="md:text-right">
+            <h5 class="text-white font-black uppercase tracking-widest text-[12px] mb-6">Opening Hours</h5>
+            <div class="space-y-5 text-[11px]">
+                <div>
+                    <p class="font-black text-white mb-1 uppercase tracking-wider text-[10px]">Orthopedics Consultation</p>
+                    <p>Morning: 11:30 am to 1:00 pm</p>
+                    <p>Evening: 6:30 pm to 9:00 pm</p>
+                </div>
+                <div>
+                    <p class="font-black text-white mb-1 uppercase tracking-wider text-[10px]">Physiotherapy</p>
+                    <p>Morning: 9:00 am to 1:00 pm</p>
+                    <p>Evening: 5:00 pm to 8:00 pm</p>
+                </div>
+                <p class="text-[#702459] font-black uppercase tracking-tighter text-[10px] pt-2">
+                    Please take appointment before coming
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-[9px] opacity-40 uppercase tracking-[0.3em]">
+        © 2015 Spine & Ortho Pain Center | Design & Developed By Avinaash Bajpai Chhabra
+    </div>
+</footer>
+    <a href="https://wa.me/919810122393" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>

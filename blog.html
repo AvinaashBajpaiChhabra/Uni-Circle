@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bajpai's Spine & Ortho Pain Centre | BLOGS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth; 
+            background-color: #ffffff;
+            color: #334155;
+            font-size: 14px; 
+        }
+
+        /* Full Justification Logic */
+        .text-justify-medical {
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        .theme-purple { color: #702459; }
+        .bg-purple { background-color: #702459; }
+        
+        /* Remove Italics Globally */
+        em, i, blockquote, .italic, cite, span, p { font-style: normal !important; }
+
+        /* Blog Card Engineering */
+        .blog-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            border-color: #702459;
+            box-shadow: 0 20px 40px rgba(112, 36, 89, 0.06);
+            transform: translateY(-5px);
+        }
+
+        .category-tag {
+            font-weight: 800;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #702459;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .blog-title {
+            font-weight: 800;
+            font-size: 1.05rem;
+            line-height: 1.4;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .blog-excerpt {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .read-more-btn {
+            font-weight: 800;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #702459;
+            transition: gap 0.3s;
+        }
+
+        .blog-card:hover .read-more-btn {
+            gap: 0.8rem;
+        }
+
+        /* Section Headings */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .section-line { height: 1px; flex-grow: 1; background: #e2e8f0; }
+
+        footer { background-color: #1a1a1a; color: #d1d5db; }
+        .footer-heading { color: #ffffff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="LOGO.png" alt="Logo" class="h-10">
+            <div class="hidden lg:flex gap-8 font-bold text-[10px] tracking-widest text-slate-500 uppercase">
+                <a href="index.html" class="hover:text-[#702459]">HOME</a>
+                <a href="about.html" class="hover:text-[#702459]">ABOUT US</a>
+                <a href="service.html" class="hover:text-[#702459]">SERVICES</a>
+                <a href="blog.html" class="hover:text-[#702459]">BLOGS</a>
+                <a href="workshops.html" class="hover:text-[#702459]">WORKSHOPS</a>
+                <a href="gallery.html" class="hover:text-[#702459]">GALLERY</a>
+                <a href="contact.html" class="hover:text-[#702459]">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[280px] flex items-center justify-center bg-slate-900 overflow-hidden text-center">
+        <div class="absolute inset-0 opacity-40">
+            <img src="banner01.jpg" class="w-full h-full object-cover" alt="Medical Banner">
+        </div>
+        <div class="relative z-10 px-8">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tighter uppercase">BLOGS & ARTICLES</h1>
+            <div class="mt-4 inline-flex items-center bg-[#702459] text-white px-5 py-2 rounded-md text-[9px] font-bold uppercase tracking-widest">
+                <span>HOME</span> <span class="mx-3 opacity-50">|</span> <span>MEDICAL BLOGS</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-24 px-6 max-w-7xl mx-auto">
+
+        <section class="mb-24">
+            <div class="section-divider">
+                <h2 class="text-xs font-black tracking-[0.3em] text-[#702459] uppercase">Regenerative & Stem Cell Therapy</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Orthobiologics</span>
+                        <h3 class="blog-title">PRP & Stem Cell Therapy</h3>
+                        <p class="blog-excerpt">Understanding Platelet Rich Plasma (PRP) and Bone Marrow Aspirate Concentrate (BMAC) as biological tools for advanced tissue healing and joint repair.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Regenerative</span>
+                        <h3 class="blog-title">Prolotherapy & Prolozone</h3>
+                        <p class="blog-excerpt">How regenerative injection therapy and Prolozone stimulate natural ligament repair and resolve chronic joint instability without surgery.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Healing</span>
+                        <h3 class="blog-title">Regenerative Injection Therapy</h3>
+                        <p class="blog-excerpt">Comprehensive protocols for non-surgical pain management procedures using the body's own growth factors and regenerative fluids.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-24">
+            <div class="section-divider">
+                <h2 class="text-xs font-black tracking-[0.3em] text-[#702459] uppercase">Ozone & Advanced Spine Care</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Medical Ozone</span>
+                        <h3 class="blog-title">Medical Ozone Therapy</h3>
+                        <p class="blog-excerpt">The therapeutic benefits of ozone in reducing inflammation, increasing oxygenation, and triggering biological repair in spinal tissues.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Spine Specialist</span>
+                        <h3 class="blog-title">Ozone Discectomy for Slip Disc</h3>
+                        <p class="blog-excerpt">A detailed look at how Ozone Discectomy treats herniated discs and sciatica, providing a safe alternative to spinal fusion surgery.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Prevention</span>
+                        <h3 class="blog-title">Avoiding Slip Disc Surgery</h3>
+                        <p class="blog-excerpt">How to avoid slip disc and spinal fusion surgery through early diagnosis and modern regenerative interventional procedures.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="section-divider">
+                <h2 class="text-xs font-black tracking-[0.3em] text-[#702459] uppercase">Complex Medical Reconstruction</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Wound Care</span>
+                        <h3 class="blog-title">Diabetic Foot & Limb Ischemia</h3>
+                        <p class="blog-excerpt">Regenerative treatments for non-healing wounds, focusing on limb preservation and biological restoration of blood flow.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Bone Health</span>
+                        <h3 class="blog-title">Non-Uniting Fractures</h3>
+                        <p class="blog-excerpt">Innovative regenerative treatments for fractures that fail to heal properly, utilizing biological scaffolds and growth factors.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Muscular</span>
+                        <h3 class="blog-title">Muscular Dystrophy Care</h3>
+                        <p class="blog-excerpt">Exploring supportive regenerative treatments aimed at improving muscle function and quality of life for dystrophy patients.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-24">
+            <div class="section-divider">
+                <h2 class="text-xs font-black tracking-[0.3em] text-[#702459] uppercase">Lower Limb & Joint Specialist</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Knee Care</span>
+                        <h3 class="blog-title">ACL, MCL & Meniscus Tears</h3>
+                        <p class="blog-excerpt">Treatment protocols for arthritis and knee pain, focusing on healing ligament tears without the need for total joint replacement.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Hip Health</span>
+                        <h3 class="blog-title">AVN Femoral Head & Hip Pain</h3>
+                        <p class="blog-excerpt">Managing Avascular Necrosis (AVN) of the hip using decompression and stem cell therapies to save the natural joint.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Joint Fluid</span>
+                        <h3 class="blog-title">Joint Fluid Replacement</h3>
+                        <p class="blog-excerpt">Understanding visco-supplementation and fluid replacement therapy for smoother, pain-free joint movement.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Ankle Care</span>
+                        <h3 class="blog-title">Heel & Ankle Pain Treatment</h3>
+                        <p class="blog-excerpt">Biological solutions for chronic heel pain, Achilles tendonitis, and ankle instability to restore mobility.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Hypermobility</span>
+                        <h3 class="blog-title">Hypermobile Joint Management</h3>
+                        <p class="blog-excerpt">Stabilizing hypermobile joints through regenerative techniques that strengthen the collagen and ligament structure.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="section-divider">
+                <h2 class="text-xs font-black tracking-[0.3em] text-[#702459] uppercase">Upper Limb & Specialty Pain</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Shoulder</span>
+                        <h3 class="blog-title">Rotator Cuff & Shoulder Pain</h3>
+                        <p class="blog-excerpt">Regenerative solutions for tendon tears and impingement, avoiding the long recovery times of shoulder surgery.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Hand/Wrist</span>
+                        <h3 class="blog-title">Carpal Tunnel & Wrist Pain</h3>
+                        <p class="blog-excerpt">Relieving nerve entrapment and hand joint pain through precise, minimally invasive clinical interventions.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Jaw Care</span>
+                        <h3 class="blog-title">TMJ Pain Treatment</h3>
+                        <p class="blog-excerpt">Innovative approaches to managing Temporomandibular Joint (TMJ) disorders for chronic jaw pain relief.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="section-divider">
+                <h2 class="text-xs font-black tracking-[0.3em] text-[#702459] uppercase">Lifestyle, Diet & Rehabilitation</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Prevention</span>
+                        <h3 class="blog-title">Avoid Joint Replacement</h3>
+                        <p class="blog-excerpt">A strategic guide on lifestyle, weight management, and early treatments to avoid total joint replacement surgery.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Nutrition</span>
+                        <h3 class="blog-title">Diet & Weight Loss</h3>
+                        <p class="blog-excerpt">The connection between nutrition, food supplements, and orthopedic health—reducing the load on your spine and joints.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-card">
+                    <div>
+                        <span class="category-tag">Rehabilitation</span>
+                        <h3 class="blog-title">Physiotherapy & Rehab</h3>
+                        <p class="blog-excerpt">Why specialized physical rehabilitation is essential to maximize the benefits of regenerative medical treatments.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+   <footer class="pt-16 pb-8 px-6 bg-[#1a1a1a] text-[#d1d5db]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm">
+        
+        <div>
+            <h5 class="text-white font-black uppercase tracking-widest text-[12px] mb-6">Patient Guide</h5>
+            <ul class="space-y-3 text-[11px] font-medium">
+                <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="service.html" class="hover:text-white transition-colors">Services</a></li>
+                <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
+                <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="text-center flex flex-col items-center">
+            <img src="LOGO.png" alt="Logo" class="h-10 mx-auto mb-6 brightness-0 invert">
+            
+            <p class="text-[10px] leading-relaxed opacity-70 mb-8 text-justify" style="text-justify: inter-word;">
+                Disclaimer: The material presented in this website is intended for informational and/or educational purpose only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+            </p>
+
+            <div class="flex justify-center gap-6 text-white text-lg">
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-[#702459] transition-colors"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="md:text-right">
+            <h5 class="text-white font-black uppercase tracking-widest text-[12px] mb-6">Opening Hours</h5>
+            <div class="space-y-5 text-[11px]">
+                <div>
+                    <p class="font-black text-white mb-1 uppercase tracking-wider text-[10px]">Orthopedics Consultation</p>
+                    <p>Morning: 11:30 am to 1:00 pm</p>
+                    <p>Evening: 6:30 pm to 9:00 pm</p>
+                </div>
+                <div>
+                    <p class="font-black text-white mb-1 uppercase tracking-wider text-[10px]">Physiotherapy</p>
+                    <p>Morning: 9:00 am to 1:00 pm</p>
+                    <p>Evening: 5:00 pm to 8:00 pm</p>
+                </div>
+                <p class="text-[#702459] font-black uppercase tracking-tighter text-[10px] pt-2">
+                    Please take appointment before coming
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-[9px] opacity-40 uppercase tracking-[0.3em]">
+        © 2015 Spine & Ortho Pain Center | Design & Developed By Avinaash Bajpai Chhabra
+    </div>
+</footer>
+
+    <a href="https://wa.me/919810122393" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
