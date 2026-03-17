@@ -16,197 +16,223 @@ body {
     scroll-behavior: smooth;
 }
 
-/* MOBILE FIX */
-@media (max-width:768px){
-    h1{font-size:1.8rem!important;}
-    h2{font-size:1.6rem!important;}
-    h3{font-size:1.3rem!important;}
-    p{font-size:0.95rem;line-height:1.6;}
-    section{padding:60px 16px!important;}
+/* HERO HEIGHT FIX */
+.hero {
+    height: 75vh;
+}
+@media (min-width:768px){
+    .hero { height: 550px; }
 }
 
-/* SCROLL TEXT */
-@keyframes scroll {
-    0% {transform: translateX(100%);}
-    100% {transform: translateX(-100%);}
+/* SLIDESHOW */
+.slide {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:1s;
 }
+.slide.active { opacity:1; }
 
-/* FIX HEIGHT */
-.responsive-height {
-    height:auto;
+/* SERVICES */
+.service-card {
+    min-height:220px;
 }
 @media(min-width:768px){
-    .responsive-height {
-        height:600px;
-    }
+    .service-card { min-height:280px; }
+}
+
+/* TABS MOBILE FIX */
+.tab-container {
+    max-height:400px;
+}
+@media(min-width:1024px){
+    .tab-container { max-height:600px; }
+}
+
+/* GALLERY */
+.gallery-thumb {
+    height:70px;
+}
+@media(min-width:768px){
+    .gallery-thumb { height:100px; }
+}
+
+/* SCROLLBAR */
+.custom-scroll::-webkit-scrollbar {
+    height:4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+    background:#e2e8f0;
+    border-radius:10px;
 }
 </style>
 </head>
 
 <body class="bg-slate-50">
 
-<!-- NAVBAR -->
-<nav class="bg-white sticky top-0 z-50 border-b">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<!-- WHATSAPP -->
+<a href="https://wa.me/919810122393"
+class="fixed bottom-5 left-5 bg-green-500 text-white p-3 rounded-full z-50">
+<i class="fab fa-whatsapp text-xl"></i>
+</a>
 
-        <img src="LOGO.png" class="h-10">
+<!-- NAV -->
+<nav class="bg-white sticky top-0 z-50 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+<img src="LOGO.png" class="h-8">
 
-        <!-- Desktop -->
-        <div class="hidden lg:flex gap-8 font-bold text-xs uppercase">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
-        </div>
-
-        <!-- Mobile -->
-        <button onclick="toggleMenu()" class="lg:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden flex flex-col bg-white px-6 py-4 space-y-4 font-bold text-sm uppercase">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
-    </div>
+<div class="hidden md:flex gap-6 text-xs font-bold uppercase">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="w-full h-[70vh] md:h-[550px] bg-slate-900 flex items-center justify-center text-center text-white px-6">
-    <h1 class="text-2xl md:text-5xl font-black">
-        Dr. Bajpai's Spine & Ortho Pain Centre
-    </h1>
+<section class="hero relative overflow-hidden">
+
+<img src="banner01.jpg" class="slide active">
+<img src="banner02.jpg" class="slide">
+<img src="banner03.jpg" class="slide">
+
+<div class="absolute inset-0 flex items-center justify-center text-center text-white px-4">
+<h1 class="text-2xl md:text-5xl font-black">
+Spine & Ortho Pain Centre
+</h1>
+</div>
+
 </section>
+
+<!-- HERO SCRIPT -->
+<script>
+let slides = document.querySelectorAll('.slide');
+let i = 0;
+setInterval(()=>{
+    slides[i].classList.remove('active');
+    i = (i+1)%slides.length;
+    slides[i].classList.add('active');
+},2500);
+</script>
 
 <!-- ABOUT -->
-<section class="py-20 bg-white text-center px-6">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-5xl font-black mb-6">Welcome</h2>
-        <p class="text-slate-600">
-            The Portal to Advance Interventional Spine and Pain procedures, Modern Orthopaedic Surgery,
-            Latest Oxygen Ozone Healing Therapies.
-        </p>
-    </div>
-</section>
-
-<!-- DOCTOR -->
-<section class="py-16 max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-10 md:gap-24 items-center">
-
-        <img src="DOCTOR.png" class="rounded-3xl shadow-xl w-full max-w-sm mx-auto">
-
-        <div>
-            <h3 class="text-sky-600 text-xs font-bold mb-2">Senior Consultant</h3>
-            <h2 class="text-3xl md:text-5xl font-black mb-4">Dr. Prashant Bajpai</h2>
-
-            <p class="text-slate-600 text-justify">
-                Highly experienced orthopedic surgeon with decades of expertise in spine and joint care.
-            </p>
-        </div>
-    </div>
+<section class="py-12 px-4 text-center">
+<h2 class="text-2xl md:text-4xl font-black mb-4">
+Welcome to <span class="text-[#702459]">SpineOrthoPain</span>
+</h2>
+<p class="text-slate-500 text-sm md:text-lg max-w-2xl mx-auto">
+Advanced spine & orthopaedic treatments with modern non-surgical techniques.
+</p>
 </section>
 
 <!-- SERVICES -->
-<section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="py-12 bg-white">
+<h2 class="text-center text-2xl md:text-4xl font-black mb-8">
+Our Services
+</h2>
 
-        <h2 class="text-3xl font-black text-center mb-10">Our Services</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 max-w-6xl mx-auto">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+<div class="service-card bg-cover rounded-2xl p-6 text-white"
+style="background-image:url('service1.jpeg')">
+<h3 class="font-bold">Orthopaedic</h3>
+</div>
 
-            <div class="bg-slate-100 p-6 rounded-2xl text-center">
-                <i class="fas fa-bone text-2xl mb-3"></i>
-                <h4 class="font-bold">Orthopaedics</h4>
-            </div>
+<div class="service-card bg-cover rounded-2xl p-6 text-white"
+style="background-image:url('service2.jpeg')">
+<h3 class="font-bold">Pain Management</h3>
+</div>
 
-            <div class="bg-slate-100 p-6 rounded-2xl text-center">
-                <i class="fas fa-heartbeat text-2xl mb-3"></i>
-                <h4 class="font-bold">Pain Management</h4>
-            </div>
+<div class="service-card bg-cover rounded-2xl p-6 text-white"
+style="background-image:url('service3.jpeg')">
+<h3 class="font-bold">Physiotherapy</h3>
+</div>
 
-            <div class="bg-slate-100 p-6 rounded-2xl text-center">
-                <i class="fas fa-running text-2xl mb-3"></i>
-                <h4 class="font-bold">Physiotherapy</h4>
-            </div>
+<div class="service-card bg-cover rounded-2xl p-6 text-white"
+style="background-image:url('service4.jpeg')">
+<h3 class="font-bold">Prolozone</h3>
+</div>
 
-            <div class="bg-slate-100 p-6 rounded-2xl text-center">
-                <i class="fas fa-syringe text-2xl mb-3"></i>
-                <h4 class="font-bold">PRP Therapy</h4>
-            </div>
-
-        </div>
-    </div>
+</div>
 </section>
 
-<!-- EDUCATION (FIXED HEIGHT ISSUE) -->
-<section class="py-16 bg-slate-100">
-    <div class="max-w-7xl mx-auto px-6">
+<!-- EDUCATION (SIMPLIFIED MOBILE FRIENDLY) -->
+<section class="py-12 bg-slate-100 px-4">
+<h2 class="text-2xl font-black mb-6">Patient Education</h2>
 
-        <div class="grid lg:grid-cols-12 bg-white rounded-3xl overflow-hidden">
+<div class="space-y-3">
 
-            <!-- LEFT -->
-            <div class="lg:col-span-4 p-6 bg-sky-500 text-white responsive-height">
-                <h4 class="font-bold mb-4">Services</h4>
+<button onclick="showTab(1)" class="w-full p-3 bg-white rounded-xl text-left font-bold">
+PRP Therapy
+</button>
 
-                <button class="block w-full text-left py-2">PRP Therapy</button>
-                <button class="block w-full text-left py-2">Ozone Therapy</button>
-                <button class="block w-full text-left py-2">Back Pain</button>
-            </div>
+<button onclick="showTab(2)" class="w-full p-3 bg-white rounded-xl text-left font-bold">
+BMAC Therapy
+</button>
 
-            <!-- RIGHT -->
-            <div class="lg:col-span-8 p-6 responsive-height">
-                <h3 class="text-2xl font-bold mb-4">PRP Therapy</h3>
-                <p class="text-slate-600">
-                    Platelet Rich Plasma therapy uses your own blood to heal tissues.
-                </p>
-            </div>
+<div id="tab1" class="hidden p-4 bg-white rounded-xl">
+PRP helps in healing joints using your own blood.
+</div>
 
-        </div>
+<div id="tab2" class="hidden p-4 bg-white rounded-xl">
+Stem-cell based regenerative treatment.
+</div>
 
-    </div>
+</div>
 </section>
+
+<script>
+function showTab(id){
+    document.querySelectorAll('[id^=tab]').forEach(el=>el.classList.add('hidden'));
+    document.getElementById('tab'+id).classList.remove('hidden');
+}
+</script>
 
 <!-- GALLERY -->
-<section class="py-16 px-6">
-    <h3 class="text-xl font-black mb-6 text-center">Gallery</h3>
+<section class="py-12 px-4">
+<h2 class="text-xl font-black mb-4">Gallery</h2>
 
-    <img src="g1.jpg" class="w-full h-[200px] md:h-[400px] object-cover rounded-2xl">
+<img id="mainImg" src="g1.jpg"
+class="w-full h-56 md:h-96 object-cover rounded-xl mb-4">
+
+<div class="flex gap-2 overflow-x-auto custom-scroll">
+
+<img src="g1.jpg" onclick="change(this)" class="gallery-thumb rounded-lg">
+<img src="banner01.jpg" onclick="change(this)" class="gallery-thumb rounded-lg">
+<img src="banner02.jpg" onclick="change(this)" class="gallery-thumb rounded-lg">
+
+</div>
 </section>
 
+<script>
+function change(el){
+    document.getElementById('mainImg').src = el.src;
+}
+</script>
+
 <!-- CONTACT -->
-<section class="py-16 bg-white px-6">
-    <div class="max-w-4xl mx-auto">
+<section class="py-12 bg-white px-4">
+<h2 class="text-2xl font-black mb-6">Book Appointment</h2>
 
-        <h2 class="text-3xl font-black mb-6 text-center">Book Appointment</h2>
+<input type="text" placeholder="Name"
+class="w-full p-3 mb-3 border rounded-xl">
 
-        <form class="space-y-4">
-            <input type="text" placeholder="Name" class="w-full p-3 border rounded-xl">
-            <input type="tel" placeholder="Phone" class="w-full p-3 border rounded-xl">
-            <textarea placeholder="Message" class="w-full p-3 border rounded-xl"></textarea>
+<input type="tel" placeholder="Phone"
+class="w-full p-3 mb-3 border rounded-xl">
 
-            <button class="w-full bg-[#702459] text-white py-3 rounded-xl">
-                Book Now
-            </button>
-        </form>
-
-    </div>
+<button class="w-full bg-[#702459] text-white p-3 rounded-xl">
+Book via WhatsApp
+</button>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-white text-center py-6 text-sm">
-    © 2026 Spine & Ortho Pain Center
+<footer class="text-center text-xs py-6 bg-black text-white">
+© 2026 Spine & Ortho Pain Centre
 </footer>
-
-<script>
-function toggleMenu(){
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-}
-</script>
 
 </body>
 </html>
